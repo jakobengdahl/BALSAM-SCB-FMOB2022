@@ -25,8 +25,8 @@
             "ui_data": {
               "label": "1a ladda indata.ipynb",
               "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
-              "x_pos": 104.99998474121094,
-              "y_pos": 111.99999237060547,
+              "x_pos": 161.99998474121094,
+              "y_pos": 121,
               "description": "Run notebook file"
             }
           },
@@ -195,8 +195,8 @@
             "ui_data": {
               "label": "Untitled.ipynb",
               "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
-              "x_pos": 427.9999694824219,
-              "y_pos": 239,
+              "x_pos": 407,
+              "y_pos": 339,
               "description": "Run notebook file"
             }
           },
@@ -215,66 +215,6 @@
               "links": [
                 {
                   "id": "d775ec10-d8f4-416c-9acb-c756377c23c1",
-                  "node_id_ref": "94f37db0-f3e8-4cb5-b652-0a164f575bb4",
-                  "port_id_ref": "outPort"
-                }
-              ]
-            }
-          ],
-          "outputs": [
-            {
-              "id": "outPort",
-              "app_data": {
-                "ui_data": {
-                  "cardinality": {
-                    "min": 0,
-                    "max": -1
-                  },
-                  "label": "Output Port"
-                }
-              }
-            }
-          ]
-        },
-        {
-          "id": "71afb088-0398-4dea-892d-38865ade5ac3",
-          "type": "execution_node",
-          "op": "execute-notebook-node",
-          "app_data": {
-            "component_parameters": {
-              "filename": "Utforska dataset.ipynb",
-              "runtime_image": "pytorch/pytorch:1.4-cuda10.1-cudnn7-runtime",
-              "outputs": [],
-              "env_vars": [],
-              "dependencies": [],
-              "include_subdirectories": false,
-              "gpu": 2,
-              "memory": 80
-            },
-            "label": "",
-            "ui_data": {
-              "label": "Utforska dataset.ipynb",
-              "image": "data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%2216%22%20viewBox%3D%220%200%2022%2022%22%3E%0A%20%20%3Cg%20class%3D%22jp-icon-warn0%20jp-icon-selectable%22%20fill%3D%22%23EF6C00%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M18.7%203.3v15.4H3.3V3.3h15.4m1.5-1.5H1.8v18.3h18.3l.1-18.3z%22%2F%3E%0A%20%20%20%20%3Cpath%20d%3D%22M16.5%2016.5l-5.4-4.3-5.6%204.3v-11h11z%22%2F%3E%0A%20%20%3C%2Fg%3E%0A%3C%2Fsvg%3E%0A",
-              "x_pos": 154,
-              "y_pos": 312,
-              "description": "Run notebook file"
-            }
-          },
-          "inputs": [
-            {
-              "id": "inPort",
-              "app_data": {
-                "ui_data": {
-                  "cardinality": {
-                    "min": 0,
-                    "max": -1
-                  },
-                  "label": "Input Port"
-                }
-              },
-              "links": [
-                {
-                  "id": "ea9c2101-f8d2-476d-bfac-46753e4459b2",
                   "node_id_ref": "94f37db0-f3e8-4cb5-b652-0a164f575bb4",
                   "port_id_ref": "outPort"
                 }

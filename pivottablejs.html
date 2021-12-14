@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>PivotTable.js</title>
+
+        <!-- external libs from cdnjs -->
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.11/c3.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery-csv/0.71/jquery.csv-0.71.min.js"></script>
+
+
+        <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/pivot.min.css">
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/pivot.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/d3_renderers.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/c3_renderers.min.js"></script>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pivottable/2.19.0/export_renderers.min.js"></script>
+
+        <style>
+            body {font-family: Verdana;}
+            .node {
+              border: solid 1px white;
+              font: 10px sans-serif;
+              line-height: 12px;
+              overflow: hidden;
+              position: absolute;
+              text-indent: 2px;
+            }
+            .c3-line, .c3-focused {stroke-width: 3px !important;}
+            .c3-bar {stroke: white !important; stroke-width: 1;}
+            .c3 text { font-size: 12px; color: grey;}
+            .tick line {stroke: white;}
+            .c3-axis path {stroke: grey;}
+            .c3-circle { opacity: 1 !important; }
+            .c3-xgrid-focus {visibility: hidden !important;}
+        </style>
+    </head>
+    <body>
+        <script type="text/javascript">
+            $(function(){
+                if(window.location != window.parent.location)
+                    $("<a>", {target:"_blank", href:""})
+                        .text("[pop out]").prependTo($("body"));
+
+                $("#output").pivotUI(
+                    $.csv.toArrays($("#output").text()),
+                    $.extend({
+                        renderers: $.extend(
+                            $.pivotUtilities.renderers,
+                            $.pivotUtilities.c3_renderers,
+                            $.pivotUtilities.d3_renderers,
+                            $.pivotUtilities.export_renderers
+                            ),
+                        hiddenAttributes: [""]
+                    }, {})
+                ).show();
+             });
+        </script>
+        <div id="output" style="display: none;">,geography,geography_type,year,less_than_high_school_graduate,high_school_graduate,some_college_or_associate_s_degree,bachelor_s_degree_or_higher,location_1,:@computed_region_uph5_8hpn,:@computed_region_i2t2_cryp
+0,Atherton,Town,2014-01-01T00:00:00.000,13.6,12.3,2.7,3.5,"{'type': 'Point', 'coordinates': [-122.2, 37.458611]}",2.0,28596
+1,Colma,Town,2014-01-01T00:00:00.000,6.3,6.4,10.4,2.4,"{'type': 'Point', 'coordinates': [-122.455556, 37.678889]}",4.0,28588
+2,Foster City,City,2014-01-01T00:00:00.000,11.9,9.7,2.0,2.9,"{'type': 'Point', 'coordinates': [-122.266389, 37.551389]}",6.0,319
+3,Portola Valley,Town,2014-01-01T00:00:00.000,48.1,0.0,0.0,1.8,"{'type': 'Point', 'coordinates': [-122.218611, 37.375]}",14.0,28597
+4,Redwood City,City,2014-01-01T00:00:00.000,16.4,10.6,6.6,3.0,"{'type': 'Point', 'coordinates': [-122.236111, 37.482778]}",21.0,28607
+5,Ladera,CDP,2014-01-01T00:00:00.000,0.0,0.0,0.0,0.0,"{'type': 'Point', 'coordinates': [-122.274167, 37.319167]}",27.0,28591
+6,Moss Beach,CDP,2014-01-01T00:00:00.000,4.8,8.2,9.3,3.5,"{'type': 'Point', 'coordinates': [-122.512778, 37.525278]}",30.0,28600
+7,South San Francisco,City,2014-01-01T00:00:00.000,14.2,7.8,4.4,4.1,"{'type': 'Point', 'coordinates': [-122.425556, 37.656111]}",19.0,28613
+8,Belmont,City,2014-01-01T00:00:00.000,20.9,5.9,5.0,3.6,"{'type': 'Point', 'coordinates': [-122.291667, 37.518056]}",15.0,28585
+9,Daly City,City,2014-01-01T00:00:00.000,13.4,8.9,6.1,6.1,"{'type': 'Point', 'coordinates': [-122.468333, 37.686389]}",,28588
+10,San Mateo,City,2014-01-01T00:00:00.000,16.1,9.6,6.5,3.4,"{'type': 'Point', 'coordinates': [-122.313056, 37.554167]}",13.0,317
+11,North Fair Oaks,CDP,2014-01-01T00:00:00.000,26.7,13.4,18.5,4.6,"{'type': 'Point', 'coordinates': [-122.203611, 37.475278]}",31.0,28608
+12,Emerald Lake Hills,CDP,2014-01-01T00:00:00.000,6.2,2.0,4.1,2.2,"{'type': 'Point', 'coordinates': [-122.266389, 37.464444]}",24.0,28607
+13,Hillsborough,Town,2014-01-01T00:00:00.000,31.1,6.1,1.5,1.4,"{'type': 'Point', 'coordinates': [-122.356389, 37.560278]}",8.0,28587
+14,Brisbane,City,2014-01-01T00:00:00.000,0.0,1.7,11.5,3.3,"{'type': 'Point', 'coordinates': [-122.419167, 37.680833]}",,28586
+15,Menlo Park,City,2014-01-01T00:00:00.000,22.1,12.0,8.7,2.9,"{'type': 'Point', 'coordinates': [-122.183333, 37.452778]}",12.0,28595
+16,Pacifica,City,2014-01-01T00:00:00.000,15.1,4.3,4.3,4.6,"{'type': 'Point', 'coordinates': [-122.485556, 37.622778]}",9.0,28604
+17,San Carlos,City,2014-01-01T00:00:00.000,8.5,8.4,4.4,2.3,"{'type': 'Point', 'coordinates': [-122.2668, 37.4955]}",18.0,28611
+18,Highlands-Baywood Park,CDP,2014-01-01T00:00:00.000,15.7,13.6,10.2,3.3,"{'type': 'Point', 'coordinates': [-122.343333, 37.525]}",25.0,317
+19,East Palo Alto,City,2014-01-01T00:00:00.000,18.3,16.4,17.2,9.1,"{'type': 'Point', 'coordinates': [-122.139722, 37.466944]}",5.0,312
+20,Broadmoor,CDP,2014-01-01T00:00:00.000,21.2,8.0,3.0,2.4,"{'type': 'Point', 'coordinates': [-122.478889, 37.6925]}",22.0,28589
+21,Millbrae,City,2014-01-01T00:00:00.000,7.0,7.8,5.3,3.7,"{'type': 'Point', 'coordinates': [-122.401389, 37.600833]}",11.0,28598
+22,Loma Mar,CDP,2014-01-01T00:00:00.000,100.0,0.0,0.0,0.0,"{'type': 'Point', 'coordinates': [-122.3075, 37.271111]}",28.0,28592
+23,Woodside,Town,2014-01-01T00:00:00.000,0.0,9.4,6.8,3.2,"{'type': 'Point', 'coordinates': [-122.259722, 37.420833]}",20.0,28607
+24,Half Moon Bay,City,2014-01-01T00:00:00.000,9.5,4.0,0.7,1.4,"{'type': 'Point', 'coordinates': [-122.436944, 37.458889]}",7.0,28590
+25,San Bruno,City,2014-01-01T00:00:00.000,7.7,7.7,7.0,3.0,"{'type': 'Point', 'coordinates': [-122.425278, 37.625278]}",1.0,28610
+26,Pescadero,CDP,2014-01-01T00:00:00.000,44.4,0.0,0.0,0.0,"{'type': 'Point', 'coordinates': [-122.381389, 37.255]}",32.0,28605
+27,El Granada,CDP,2014-01-01T00:00:00.000,9.2,4.3,9.1,2.4,"{'type': 'Point', 'coordinates': [-122.473333, 37.503889]}",23.0,28590
+28,West Menlo Park,CDP,2014-01-01T00:00:00.000,37.8,0.0,5.7,3.6,"{'type': 'Point', 'coordinates': [-122.203056, 37.433611]}",34.0,28595
+29,Montara,CDP,2014-01-01T00:00:00.000,3.3,0.0,0.0,0.0,"{'type': 'Point', 'coordinates': [-122.506389, 37.539722]}",29.0,28599
+30,Burlingame,City,2014-01-01T00:00:00.000,20.1,8.3,7.4,3.7,"{'type': 'Point', 'coordinates': [-122.363611, 37.583333]}",16.0,28587
+31,La Honda,CDP,2014-01-01T00:00:00.000,0.0,0.0,11.9,0.0,"{'type': 'Point', 'coordinates': [-122.197222, 37.399444]}",26.0,28597
+</div>
+    </body>
+</html>
